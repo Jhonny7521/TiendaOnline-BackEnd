@@ -1,4 +1,6 @@
 import pymysql.cursors
+
+# Clase encargada de establecer las conexión con la base de datos
 class MySQLConnection:
   def __init__(self, db):
     connection = pymysql.connect(host = 'mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com',

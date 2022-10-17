@@ -1,5 +1,6 @@
 from store_app.config.mysqlconnection import connectToMySQL
 
+# ORM de la tabla Products
 class Product:
 
   def __init__(self, data):
@@ -10,6 +11,7 @@ class Product:
     self.discount = data['discount']
     self.category = data['category']
   
+  # Método para enviár consulta a la base de datos y obtener todos los productos.
   @classmethod
   def get_all_products(cls):
     query = "SELECT * FROM product;"
@@ -17,6 +19,7 @@ class Product:
     print(results)
     return results
   
+  # Método para enviár consulta a la base de datos y obtener todos los productos según una categoría.
   @classmethod
   def get_products_by_category(cls, data):
     print(data)
@@ -24,6 +27,7 @@ class Product:
     results = connectToMySQL('bsale_test').query_db(query,data)
     return results
 
+  # Método para enviár consulta a la base de datos y obtener todos los productos según un texto enviado.
   @classmethod
   def get_products_by_text(cls, data):
     print(data)
