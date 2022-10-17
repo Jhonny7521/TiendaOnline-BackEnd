@@ -12,10 +12,10 @@ def get_products():
 @app.route("/api/products/category/<int:idCategory>")
 def get_products_by_category(idCategory):
 
-  data = {
-    "category": idCategory
-  }
-  # data = (idCategory, )
+  # data = {
+  #   "category": idCategory
+  # }
+  data = (idCategory, '')
 
   products = Product.get_products_by_category(data)
   return jsonify(products)
